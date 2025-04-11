@@ -1,0 +1,400 @@
+/* 🔹 Notices Header */
+.notices-header {
+    text-align: center;
+    padding: 50px 0;
+    background: linear-gradient(135deg, var(--base-color), #8e0e00);
+    color: white;
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.notices-header h2 {
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+/* 🔹 Filters Section */
+.notice-filters {
+    margin: 30px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.input-group-text {
+    background-color: var(--base-color);
+    color: white;
+    border: none;
+}
+
+/* 🔹 Scrolling Notices Section */
+.scrolling-notices-container {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    height: 550px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.scrolling-notices-header {
+    background: linear-gradient(to right, var(--base-color), #c0392b);
+    color: white;
+    padding: 18px;
+    margin: 0;
+    position: relative;
+}
+
+.scrolling-notices-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    letter-spacing: 0.5px;
+}
+
+.scrolling-notices-wrapper {
+    height: calc(100% - 60px);
+    overflow: hidden;
+    position: relative;
+}
+
+.scrolling-notices-list {
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    animation: scrollNotices 40s linear infinite;
+}
+
+.scrolling-notices-list:hover {
+    animation-play-state: paused;
+}
+
+.scrolling-notice-item {
+    padding: 18px 25px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-left: 20px;
+}
+
+.scrolling-notice-item:hover {
+    background: #f9f9f9;
+    transform: translateX(5px);
+}
+
+.scrolling-notice-item strong {
+    color: var(--base-color);
+    font-weight: 600;
+}
+
+.notice-priority {
+    width: 4px;
+    height: 70%;
+    position: absolute;
+    left: 8px;
+    top: 15%;
+    border-radius: 3px;
+}
+
+.notice-priority.high {
+    background: #ff4757;
+}
+
+.notice-priority.normal {
+    background: #2ed573;
+}
+
+.notice-content {
+    margin: 10px 0;
+    line-height: 1.6;
+    color: #555;
+}
+
+.notice-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 10px;
+}
+
+@keyframes scrollNotices {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+.scrolling-notices-wrapper::before,
+.scrolling-notices-wrapper::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 30px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.scrolling-notices-wrapper::before {
+    top: 0;
+    background: linear-gradient(to bottom, white 10%, transparent);
+}
+
+.scrolling-notices-wrapper::after {
+    bottom: 0;
+    background: linear-gradient(to top, white 10%, transparent);
+}
+
+/* 🔹 Notice Cards */
+.notice-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    position: relative;
+    padding: 0;
+    border-left: 5px solid var(--base-color);
+    height: 100%;
+}
+
+.notice-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.notice-card .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    margin-bottom: 0;
+    background: #f9f9f9;
+}
+
+.notice-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #222;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.category-badge {
+    background: #f1f2f6;
+    color: #555;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-left: 10px;
+}
+
+.notice-card .card-body {
+    padding: 20px;
+}
+
+.notice-date {
+    font-size: 0.9rem;
+    color: var(--base-color);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+}
+
+.notice-description {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.notice-card .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #f9f9f9;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.view-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 18px;
+    background: var(--base-color);
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.view-btn:hover {
+    background: #222;
+    color: white;
+    transform: translateX(3px);
+}
+
+.view-btn i {
+    margin-left: 8px;
+    transition: transform 0.3s;
+}
+
+.view-btn:hover i {
+    transform: translateX(4px);
+}
+
+.urgency-tag {
+    background: #ff4757;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+/* Category Specific Styles */
+.notice-card.exam {
+    border-left-color: #ff4757;
+}
+
+.notice-card.exam .category-badge {
+    background: #ff4757;
+    color: white;
+}
+
+.notice-card.event {
+    border-left-color: #2ed573;
+}
+
+.notice-card.event .category-badge {
+    background: #2ed573;
+    color: white;
+}
+
+.notice-card.general {
+    border-left-color: #1e90ff;
+}
+
+.notice-card.general .category-badge {
+    background: #1e90ff;
+    color: white;
+}
+
+/* Loading Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.notice-card {
+    animation: fadeIn 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+.notice-card:nth-child(1) { animation-delay: 0.1s; }
+.notice-card:nth-child(2) { animation-delay: 0.2s; }
+.notice-card:nth-child(3) { animation-delay: 0.3s; }
+.notice-card:nth-child(4) { animation-delay: 0.4s; }
+.notice-card:nth-child(5) { animation-delay: 0.5s; }
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .scrolling-notices-container {
+        height: 400px;
+    }
+    
+    .notice-card .card-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .category-badge {
+        margin-left: 0;
+        align-self: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .notices-header {
+        padding: 30px 0;
+        font-size: 1.8rem;
+    }
+    
+    .notices-container {
+        /* padding: 15px 0; */
+        max-width: 100%;
+        padding-left: 0 !important; /* Remove left padding */
+    }
+    
+    .scrolling-notices-container {
+        height: 350px;
+        margin-bottom: 20px;
+    }
+    
+    .scrolling-notice-item {
+        padding: 15px 20px;
+    }
+    
+    .notice-card {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .notice-filters .col-md-4,
+    .notice-filters .col-md-3 {
+        margin-bottom: 10px;
+    }
+    
+    .notices-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .notice-title {
+        font-size: 1.1rem;
+    }
+}
+
+/* 🔹 Updated Scrolling Notices Container */
+.scrolling-notices-container {
+    width: 100%;
+    margin-left: 0;
+    border-radius: 0 10px 10px 0; /* Rounded right corners only */
+    box-shadow: 5px 0 15px rgba(0,0,0,0.1), 
+                2px 0 5px rgba(0,0,0,0.05);
+}
+
+/* Inner content narrower than container */
+.scrolling-notices-wrapper {
+    width: 95%;
+    margin: 0 auto;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.05); /* Inner glow */
+}
+
+/* Adjust right section to be slightly wider */
+.regular-notices-container {
+    width: 100%; /* Takes full available width */
+}
